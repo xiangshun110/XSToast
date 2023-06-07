@@ -10,6 +10,10 @@
 请看效果
 <video src="other/video.mp4"></video>
 
+
+https://github.com/xiangshun110/XSToast/assets/2546146/5a938b69-5219-4410-8adb-e9a39ea219e2
+
+
 ## 使用
 1.设置全局rootView
 
