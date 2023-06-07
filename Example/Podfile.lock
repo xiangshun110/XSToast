@@ -1,0 +1,23 @@
+PODS:
+  - MBProgressHUD (1.2.0)
+  - XSToast (0.1.0):
+    - MBProgressHUD (~> 1.2.0)
+
+DEPENDENCIES:
+  - XSToast (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - MBProgressHUD
+
+EXTERNAL SOURCES:
+  XSToast:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  XSToast: 9313857f1712bfca98f5044fb84c180b9bae1973
+
+PODFILE CHECKSUM: 75aa84a8436dfae3b1c7dcdeef70ed81dbff181a
+
+COCOAPODS: 1.11.2

@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'XSToast_Example' do
+  pod 'XSToast', :path => '../'
+
+  target 'XSToast_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
