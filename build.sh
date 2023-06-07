@@ -20,6 +20,4 @@ git push github master
 git tag $tag
 git push github --tags
 
-#pod trunk push MEDToast.podspec --allow-warnings
-#pod repo push edoctor MEDToast.podspec --verbose --use-libraries --allow-warnings
-pod trunk push MEDToast.podspec --allow-warnings --verbose --use-libraries
+pod trunk push XSToast.podspec --allow-warnings --verbose --use-libraries

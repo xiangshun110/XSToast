@@ -19,7 +19,7 @@
     static NSBundle *rBundle = nil;
     if (!rBundle) {
         NSBundle *mainBundle = [NSBundle bundleForClass:[XSToastTool class]];
-        NSString *path = [mainBundle pathForResource:@"MEDToast" ofType:@"bundle"];
+        NSString *path = [mainBundle pathForResource:@"XSToast" ofType:@"bundle"];
         rBundle = [NSBundle bundleWithPath:path]?:mainBundle;
     }
     return rBundle;
