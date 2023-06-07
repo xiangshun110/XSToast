@@ -7,9 +7,9 @@
 
 ## 简介
 
-请看效果
-<video src="other/video.mp4"></video>
+本库可以用于iOS扩展程序
 
+请看效果
 
 https://github.com/xiangshun110/XSToast/assets/2546146/5a938b69-5219-4410-8adb-e9a39ea219e2
 
