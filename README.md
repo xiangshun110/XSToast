@@ -34,12 +34,10 @@ https://github.com/xiangshun110/XSToast/assets/2546146/5a938b69-5219-4410-8adb-e
 
 ## 
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 
-## Installation
+
+## 安装
 
 MEDToast is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -47,6 +45,20 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'XSToast'
 ```
+
+
+
+## 版本更新记录
+
+v0.1.3
+
+XSToastTool增加方法,可以配置toast的显示位置
+
+```objective-c
+- (void)setGlobalPosition:(XSToastPosition)position;
+```
+
+
 
 ## Author
 

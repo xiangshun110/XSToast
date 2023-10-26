@@ -12,6 +12,7 @@
 		190588DDBE484D4975F119A781423D20 /* XSToastTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B675A78DA3A2852A81E6B39D6C61C15 /* XSToastTool.m */; };
 		1B1F93D74E4ECDA4D2094344CB8ADD85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB342FF58CA5A5D1282C84E02280A34F /* Foundation.framework */; };
 		229D67340D3DAFA5F0F7FF8C666620E7 /* XSToastOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A0C549F514734B5228CC61F927EA66 /* XSToastOperation.m */; };
+		2424F6AC2AEA12DD00145721 /* XSToastConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 2424F6AA2AEA12DD00145721 /* XSToastConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FF2058327AD889FC7DF70075C620CDA /* XSToast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E765BF5D48856743A94D9B91DCF3096 /* XSToast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		322373A5C0634D98363F33C2B96E8CF6 /* Pods-XSToast_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 365D35AF111A182BD231F5E46BE31578 /* Pods-XSToast_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		58C91B4AB36E6B16421106CA634C58EF /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF19F2C17178E7145FE1DBF7DE5B7D /* MBProgressHUD-dummy.m */; };
@@ -77,6 +78,7 @@
 		1CC8F5A1EFF0D4221C29D996C6A2F7EA /* Pods-XSToast_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XSToast_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1EA531534B3BD980FB14BE527DF4C3ED /* XSToast-XSToast */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "XSToast-XSToast"; path = XSToast.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F64496688D3CB5361131E4B388FB4DC /* XSToast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XSToast.debug.xcconfig; sourceTree = "<group>"; };
+		2424F6AA2AEA12DD00145721 /* XSToastConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSToastConstant.h; path = XSToast/Classes/XSToastConstant.h; sourceTree = "<group>"; };
 		27AA2075F97D7EB9891871C7595CC071 /* XSToast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XSToast-dummy.m"; sourceTree = "<group>"; };
 		2B675A78DA3A2852A81E6B39D6C61C15 /* XSToastTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XSToastTool.m; path = XSToast/Classes/XSToastTool.m; sourceTree = "<group>"; };
 		32D29E1415E6A5FDA0BAE1823CEB91DD /* Image.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Image.xcassets; path = XSToast/Assets/Image.xcassets; sourceTree = "<group>"; };
@@ -84,7 +86,7 @@
 		365D35AF111A182BD231F5E46BE31578 /* Pods-XSToast_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XSToast_Tests-umbrella.h"; sourceTree = "<group>"; };
 		41347373ADDC59135E2146CB28302264 /* Pods-XSToast_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XSToast_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		41C044BB7C74F1508418DDC4AB96EDA9 /* Pods-XSToast_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XSToast_Tests.modulemap"; sourceTree = "<group>"; };
-		4227399A178A834DD91239383B2FB148 /* XSToast */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XSToast; path = XSToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4227399A178A834DD91239383B2FB148 /* XSToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XSToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4689DCB004F98389573CCA1701963019 /* XSToastTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XSToastTool.h; path = XSToast/Classes/XSToastTool.h; sourceTree = "<group>"; };
 		46B056492C704D0065A2A65DC472435B /* Pods-XSToast_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XSToast_Example-Info.plist"; sourceTree = "<group>"; };
 		49E5EC26F00680A98707D4B1637AA2C5 /* XSToast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "XSToast-Info.plist"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				2B675A78DA3A2852A81E6B39D6C61C15 /* XSToastTool.m */,
 				E4E95B47EA32D4FC709385E1AA6684E3 /* XSToastOperation.h */,
 				99A0C549F514734B5228CC61F927EA66 /* XSToastOperation.m */,
+				2424F6AA2AEA12DD00145721 /* XSToastConstant.h */,
 				FEB13A905CA9286E393984B12BE6EF62 /* Pod */,
 				D55FA79FF0BE90979CC8ED2C7003F935 /* Support Files */,
 			);
@@ -237,7 +240,7 @@
 				8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */,
 				7D606138CBB8B676458DFA1995150CC2 /* Pods-XSToast_Example */,
 				BAFBBB36F2446E9B4880A2C09ADA6624 /* Pods-XSToast_Tests */,
-				4227399A178A834DD91239383B2FB148 /* XSToast */,
+				4227399A178A834DD91239383B2FB148 /* XSToast.framework */,
 				1EA531534B3BD980FB14BE527DF4C3ED /* XSToast-XSToast */,
 			);
 			name = Products;
@@ -350,6 +353,7 @@
 				5C036B4843400769B3476579583ED609 /* UIImage+xstoast.h in Headers */,
 				2FF2058327AD889FC7DF70075C620CDA /* XSToast-umbrella.h in Headers */,
 				9A3F9A83B5F41A1E3456DFF02BE88184 /* XSToastTool.h in Headers */,
+				2424F6AC2AEA12DD00145721 /* XSToastConstant.h in Headers */,
 				6936F93FE2C8B97908E230D543DE0EEA /* XSToastOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,7 +403,7 @@
 			);
 			name = XSToast;
 			productName = XSToast;
-			productReference = 4227399A178A834DD91239383B2FB148 /* XSToast */;
+			productReference = 4227399A178A834DD91239383B2FB148 /* XSToast.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2F29B62829B00A0E9FBE728B017166F2 /* XSToast-XSToast */ = {

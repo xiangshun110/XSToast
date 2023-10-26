@@ -107,23 +107,40 @@
     hud.userInteractionEnabled = NO;
     __weak __typeof(self) weakSelf = self;
     
-    
-    //计算自己的高度
-    float msgHeight =  [self heightWithFont:hud.label.font width:[UIScreen mainScreen].bounds.size.width - hud.margin * 2 msg:self.msg];
-    msgHeight += hud.margin * 2; //margin
-        
-    float offsetY = view.frame.size.height / 2;
-    
-    if (self.keyboardEndFrame.origin.y > 0) {
-        offsetY = self.keyboardEndFrame.origin.y - offsetY - msgHeight;
-    } else {
-        if (@available(iOS 11.0, *)) {
-            offsetY -= view.safeAreaInsets.bottom;
+    switch (self.position) {
+        case XSToastPositionCenter:
+        {
+            hud.offset = CGPointMake(0.f, 0.0f);
         }
-        offsetY -= msgHeight;
+            break;
+        case XSToastPositionTop:
+        case XSToastPositionBottom:
+        {
+            //计算自己的高度
+            float msgHeight =  [self heightWithFont:hud.label.font width:[UIScreen mainScreen].bounds.size.width - hud.margin * 2 msg:self.msg];
+            msgHeight += hud.margin * 2; //margin
+                
+            float offsetY = view.frame.size.height / 2;
+            
+            if (self.keyboardEndFrame.origin.y > 0) {
+                offsetY = self.keyboardEndFrame.origin.y - offsetY - msgHeight;
+            } else {
+                if (@available(iOS 11.0, *)) {
+                    offsetY -= view.safeAreaInsets.bottom;
+                }
+                offsetY -= msgHeight;
+            }
+            if (self.position == XSToastPositionBottom) {
+                hud.offset = CGPointMake(0.f, offsetY);
+            } else {
+                hud.offset = CGPointMake(0.f, -offsetY);
+            }
+        }
+            break;
+        default:
+            hud.offset = CGPointMake(0.f, 0.0f);
+            break;
     }
-   
-    hud.offset = CGPointMake(0.f, offsetY);
     
     hud.completionBlock = ^{
         weakSelf.executing = NO;

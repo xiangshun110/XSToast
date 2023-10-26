@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "XSToastConstant.h"
+
 
 
 //#define showToast(msg)          [[TDToastManager sharedManager] showToast:msg second:2]
@@ -26,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 单例
 + (instancetype)share;
 
+/// 设置显示位置， 只对showToast和showToast： second：有效
+/// @param position 位置
+- (void)setGlobalPosition:(XSToastPosition)position;
 
 /// 显示一个toast，消失时间根据msg长度计算，最多6秒
 /// @param msg 内容

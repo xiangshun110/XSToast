@@ -23,6 +23,9 @@
 
 @property (nonatomic, assign) CGRect            keyboardEndFrame;
 
+@property (nonatomic, assign) XSToastPosition   position;
+
+
 @end
 
 @implementation XSToastTool
@@ -82,9 +85,14 @@
     return NO;
 }
 
+- (void)setGlobalPosition:(XSToastPosition)position {
+    self.position = position;
+}
+
 - (void)showToast:(NSString *_Nullable)msg second:(int)second {
     if (![self checkRootView]) return;
     XSToastOperation *op = [XSToastOperation showToast:msg second:second keyboardEndFrame:self.keyboardEndFrame];
+    op.position = self.position;
     op.rootView = self.rootView;
     [self.queue1 addOperation:op];
 }

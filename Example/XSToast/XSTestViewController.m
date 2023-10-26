@@ -36,7 +36,9 @@
         @"显示单实例loading",
         @"移除单实例loading",
         @"成功",
-        @"失败"
+        @"失败",
+        @"设置位置-中间",
+        @"设置位置-顶部"
     ];
     
     [self.tableView reloadData];
@@ -88,6 +90,18 @@
         case 6:
         {
             [[XSToastTool share] showError:@"no"];
+        }
+            break;
+        case 7:
+        {
+            [[XSToastTool share] setGlobalPosition:XSToastPositionCenter];
+            [[XSToastTool share] showToast:@"设置成功"];
+        }
+            break;
+        case 8:
+        {
+            [[XSToastTool share] setGlobalPosition:XSToastPositionTop];
+            [[XSToastTool share] showToast:@"设置成功"];
         }
             break;
             

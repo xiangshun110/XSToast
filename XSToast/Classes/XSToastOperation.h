@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XSToastConstant.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XSToastOperation : NSOperation
 
 @property (nonatomic, weak) UIView *rootView;
+
+@property (nonatomic, assign) XSToastPosition   position;
 
 + (instancetype)showToast:(NSString *_Nullable)msg second:(int)second keyboardEndFrame:(CGRect)keyboardEndFrame;
 
