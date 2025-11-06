@@ -7,6 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "XSToastConstant.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 //#define showToast(msg)          [[TDToastManager sharedManager] showToast:msg second:2]
 //#define showSingleToast(msg)    [[TDToastManager sharedManager] showSingleToast:msg second:2]
