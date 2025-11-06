@@ -805,9 +805,9 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 #if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
 	BOOL isActivityIndicator = [indicator isKindOfClass:[UIActivityIndicatorView class]];
 #else   // !(TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-    BOOL isActivityIndicator = [indicator isKindOfClass:[YRKSpinningProgressIndicator class]];
+    BOOL isActivityIndicator = [indicator isKindOfClass:[XYRKSpinningProgressIndicator class]];
 #endif  // (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-	BOOL isRoundIndicator = [indicator isKindOfClass:[MBRoundProgressView class]];
+	BOOL isRoundIndicator = [indicator isKindOfClass:[XMBRoundProgressView class]];
 	
 	if (mode == XMBProgressHUDModeIndeterminate &&  !isActivityIndicator) {
 		// Update to indeterminate indicator
@@ -817,11 +817,11 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 										 initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge]);
 		[(UIActivityIndicatorView *)indicator startAnimating];
 #else   // !(TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-        self.indicator = MB_AUTORELEASE([[YRKSpinningProgressIndicator alloc] initWithFrame:NSMakeRect(20, 20, self.spinsize, self.spinsize)]);
+        self.indicator = MB_AUTORELEASE([[XYRKSpinningProgressIndicator alloc] initWithFrame:NSMakeRect(20, 20, self.spinsize, self.spinsize)]);
         // [(YRKSpinningProgressIndicator *)self.indicator setStyle:NSProgressIndicatorSpinningStyle];
-        [(YRKSpinningProgressIndicator *)self.indicator setColor:[NSColor whiteColor]];
-        [(YRKSpinningProgressIndicator *)self.indicator setUsesThreadedAnimation:NO];
-        [(YRKSpinningProgressIndicator *)self.indicator startAnimation:self];
+        [(XYRKSpinningProgressIndicator *)self.indicator setColor:[NSColor whiteColor]];
+        [(XYRKSpinningProgressIndicator *)self.indicator setUsesThreadedAnimation:NO];
+        [(XYRKSpinningProgressIndicator *)self.indicator startAnimation:self];
 #endif  // (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
 		[self addSubview:indicator];
 	}
@@ -836,11 +836,11 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 			// Update to determinante indicator
 			[indicator removeFromSuperview];
 			// self.indicator = [MB_AUTORELEASE([[MBRoundProgressView alloc] init]);
-            self.indicator = MB_AUTORELEASE([[MBRoundProgressView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.spinsize, self.spinsize)]);
+            self.indicator = MB_AUTORELEASE([[XMBRoundProgressView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.spinsize, self.spinsize)]);
 			[self addSubview:indicator];
 		}
 		if (mode == XMBProgressHUDModeAnnularDeterminate) {
-			[(MBRoundProgressView *)indicator setAnnular:YES];
+			[(XMBRoundProgressView *)indicator setAnnular:YES];
 		}
 	}
 	else if (mode == XMBProgressHUDModeCustomView && customView != indicator) {
@@ -1202,7 +1202,7 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 @end
 
 
-@implementation MBRoundProgressView
+@implementation XMBRoundProgressView
 
 #pragma mark - Lifecycle
 
@@ -1591,7 +1591,7 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 
 #if !(TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
 
-@implementation MBSpinnerProgressView
+@implementation XMBSpinnerProgressView
 
 // Create subclass of NSProgressIndicator inside method do like this
 
@@ -1621,7 +1621,7 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 #define kFadeMultiplier     0.85
 
 
-@interface YRKSpinningProgressIndicator ()
+@interface XYRKSpinningProgressIndicator ()
 
 - (void)updateFrame:(NSTimer *)timer;
 - (void)animateInBackgroundThread;
@@ -1632,7 +1632,7 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 @end
 
 
-@implementation YRKSpinningProgressIndicator
+@implementation XYRKSpinningProgressIndicator
 
 @synthesize color = _foreColor;
 @synthesize backgroundColor = _backColor;

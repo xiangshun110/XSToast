@@ -585,9 +585,9 @@ enum {
  * A progress view for showing definite progress by filling up a circle (pie chart).
  */
 #if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-@interface MBRoundProgressView : UIView
+@interface XMBRoundProgressView : UIView
 #else   // !(TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-@interface MBRoundProgressView : NSView
+@interface XMBRoundProgressView : NSView
 {
     CGColorRef _cgColorFromNSColor;
 }
@@ -689,7 +689,7 @@ enum {
 /**
  * A Spinner indefinite progress view modifying look of NSProgressIndicator.
  */
-@interface MBSpinnerProgressView : NSProgressIndicator
+@interface XMBSpinnerProgressView : NSProgressIndicator
 
 @end
 
@@ -700,7 +700,7 @@ enum {
 //
 //  Modified for ObjC-ARC compatibility by Wayne Fox 2014
 
-@interface YRKSpinningProgressIndicator : NSView {
+@interface XYRKSpinningProgressIndicator : NSView {
     int _position;
     int _numFins;
 #if __has_feature(objc_arc)
