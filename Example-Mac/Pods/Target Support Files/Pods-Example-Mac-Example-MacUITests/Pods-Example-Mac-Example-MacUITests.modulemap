@@ -1,0 +1,6 @@
+framework module Pods_Example_Mac_Example_MacUITests {
+  umbrella header "Pods-Example-Mac-Example-MacUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

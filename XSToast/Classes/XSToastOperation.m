@@ -68,7 +68,7 @@
 }
 
 - (void)makeToast {
-    UIView *view = self.rootView;
+    XSView *view = self.rootView;
     if (!view) return;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.mode = MBProgressHUDModeText;

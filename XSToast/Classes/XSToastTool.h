@@ -5,12 +5,8 @@
 //  Created by shun on 2021/7/30.
 //  Copyright © 2021 edoctor. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
-#import <MBProgressHUD/MBProgressHUD.h>
 #import "XSToastConstant.h"
-
-
 
 //#define showToast(msg)          [[TDToastManager sharedManager] showToast:msg second:2]
 //#define showSingleToast(msg)    [[TDToastManager sharedManager] showSingleToast:msg second:2]
@@ -21,9 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XSToastTool : NSObject
 
-
 /// toast在这个上面
-@property (nonatomic, weak) UIView *rootView;
+@property (nonatomic, weak) XSView *rootView;
 
 /// 单例
 + (instancetype)share;
@@ -60,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 显示一个单例loading
 /// @param msg 消息
 /// @param view 父视图
-- (void)showSingleLoading:(NSString *_Nullable)msg view:(UIView *)view;
+- (void)showSingleLoading:(NSString *_Nullable)msg view:(XSView *)view;
 
 /// 移除一个单例loading
 - (void)removeSingleLoading;
@@ -69,13 +64,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 显示一个lading
 /// @param msg 文字
 /// @param view 父视图
-- (MBProgressHUD *)showLoading:(NSString *_Nullable)msg view:(UIView *)view;
+- (MBProgressHUD *)showLoading:(NSString *_Nullable)msg view:(XSView *)view;
 
 
 ///  显示一个圆形进度
 /// @param msg 消息
 /// @param view 父视图
-- (MBProgressHUD *)showProgress:(NSString *_Nullable)msg view:(UIView *)view;
+- (MBProgressHUD *)showProgress:(NSString *_Nullable)msg view:(XSView *)view;
 
 
 @end

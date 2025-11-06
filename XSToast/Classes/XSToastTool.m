@@ -8,7 +8,14 @@
 
 #import "XSToastTool.h"
 #import "XSToastOperation.h"
+
+#if TARGET_OS_IPHONE
 #import "UIImage+xstoast.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+#elif TARGET_OS_MAC
+#import "XMBProgressHUD.h"
+#endif
+
 
 #define rgb(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f]
 #define rgba(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
@@ -18,7 +25,6 @@
 @property (nonatomic, strong) NSOperationQueue  *queue1;
 
 @property (nonatomic, strong) MBProgressHUD     *singleHud;
-
 @property (nonatomic, strong) MBProgressHUD     *singleToast;
 
 @property (nonatomic, assign) CGRect            keyboardEndFrame;
@@ -44,11 +50,14 @@
 
 - (void)initOther {
     self.keyboardEndFrame = CGRectZero;
+#if TARGET_OS_IPHONE
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [center addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardWillHideNotification object:nil];
+#endif
 }
 
+#if TARGET_OS_IPHONE
 - (void)keyboardDidShow:(NSNotification *)noti {
     NSDictionary *userInfo = [noti userInfo];
     NSTimeInterval animationDuration;
@@ -59,21 +68,19 @@
     [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] getValue:&keyboardBeginFrame];
     [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
     [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
-    
     self.keyboardEndFrame = keyboardEndFrame;
-
 //    CGFloat offsetHeight = [UIScreen mainScreen].bounds.size.height - keyboardEndFrame.origin.y ;
 //    offsetHeight = offsetHeight > 0 ? offsetHeight : 0;
 //
 //    NSLog(@"willShowNotification : %f\n, keyboardBeginFrame = %@\n,keyboardEndFrame = %@", offsetHeight,NSStringFromCGRect(keyboardBeginFrame),NSStringFromCGRect(keyboardEndFrame));
-    
 }
-
 - (void)keyboardDidHide:(NSNotification *)noti {
     self.keyboardEndFrame = CGRectZero;
 }
+#endif
 
-- (void)setRootView:(UIView *)rootView {
+
+- (void)setRootView:(XSView *)rootView {
     _rootView = rootView;
 }
 
@@ -122,7 +129,7 @@
             self.singleToast = nil;
         }
         
-        UIView *view = self.rootView;
+        XSView *view = self.rootView;
         if (!view) return;
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
@@ -212,7 +219,7 @@
     [self showToastWithType:2 msg:msg];
 }
 
-- (void)showSingleLoading:(NSString *_Nullable)msg view:(UIView *)view; {
+- (void)showSingleLoading:(NSString *_Nullable)msg view:(XSView *)view; {
     if (!view) return;
     if (self.singleHud) {
         [self removeSingleLoading];
@@ -248,7 +255,7 @@
         
         
 //        NS_EXTENSION_UNAVAILABLE_IOS
-        UIView *view = self.rootView;
+        XSView *view = self.rootView;
 //        if (@available(iOSApplicationExtension 11.0, *)) {
 //            view = [UIApplication sharedApplication].keyWindow;
 //        }
@@ -293,7 +300,7 @@
 }
 
 
-- (MBProgressHUD *)showLoading:(NSString *_Nullable)msg view:(UIView *)view {
+- (MBProgressHUD *)showLoading:(NSString *_Nullable)msg view:(XSView *)view {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
 //    hud.bezelView.style = MBProgressHUDBackgroundStyleBlur;
@@ -315,7 +322,7 @@
 
 
 
-- (MBProgressHUD *)showProgress:(NSString *_Nullable)msg view:(UIView *)view {
+- (MBProgressHUD *)showProgress:(NSString *_Nullable)msg view:(XSView *)view {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.mode = MBProgressHUDModeDeterminate;
 //    hud.bezelView.style = MBProgressHUDBackgroundStyleBlur;
