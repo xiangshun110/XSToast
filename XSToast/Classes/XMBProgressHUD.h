@@ -630,9 +630,9 @@ enum {
  * A flat bar progress view.
  */
 #if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-@interface MBBarProgressView : UIView
+@interface XMBBarProgressView : UIView
 #else   // !(TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-@interface MBBarProgressView : NSView
+@interface XMBBarProgressView : NSView
 {
     CGColorRef _cgColorFromNSColor;
 }

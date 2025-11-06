@@ -828,7 +828,7 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 	else if (mode == XMBProgressHUDModeDeterminateHorizontalBar) {
 		// Update to bar determinate indicator
 		[indicator removeFromSuperview];
-        self.indicator = MB_AUTORELEASE([[MBBarProgressView alloc] init]);
+        self.indicator = MB_AUTORELEASE([[XMBBarProgressView alloc] init]);
 		[self addSubview:indicator];
 	}
 	else if (mode == XMBProgressHUDModeDeterminate || mode == XMBProgressHUDModeAnnularDeterminate) {
@@ -1382,7 +1382,7 @@ static const CGFloat kDetailsLabelFontSize = 12.0f;
 @end
 
 
-@implementation MBBarProgressView
+@implementation XMBBarProgressView
 
 #pragma mark - Lifecycle
 
