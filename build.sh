@@ -20,4 +20,4 @@ git push github master
 git tag $tag
 git push github --tags
 
-pod trunk push XSToast.podspec --allow-warnings --verbose --use-libraries
+pod trunk push XSToast.podspec --allow-warnings --verbose --use-libraries --skip-import-validation
